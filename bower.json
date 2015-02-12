@@ -1,0 +1,9 @@
+{
+  "name": "practica-jquery-mobile",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jquery": "~1.11.1",
+    "jquery-mobile": "~1.4.5"
+  }
+}
