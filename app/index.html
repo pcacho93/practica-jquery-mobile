@@ -1,112 +1,429 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>jQuery Mobile Demo</title>
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-    </head>
-    <body>
-        <!-- Main Page-->
-        <div data-role="page" id="main">
-            <div data-role="header">
-                <a href="index.html" data-icon="delete">Cancelar</a>
-                <h1>
-                    Pedir pizza
-                </h1>
-                <a href="index.html" data-icon="check">Guardar</a>
-            </div>
-            <div data-role="content">
-                <form action="#" method="get">
-                    <h2>
-                        Formulario para pedir una pizza:
-                    </h2>
-                    <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup">
-                            <legend>
-                                Escoje la base:
-                            </legend>
-                            <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
-                            <label for="radio-choice-1">
-                                Fina y crujiente
-                            </label>
-                            <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2" />
-                            <label for="radio-choice-2">
-                                Queso gratinado
-                            </label>
-                            <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3" />
-                            <label for="radio-choice-3">
-                                Gorda y esponjosa
-                            </label>
-                        </fieldset>
-                    </div>
-                    <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup">
-                            <legend>
-                                Elige los ingredientes de la pizza:
-                            </legend>
-                            <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
-                            <label for="checkbox-1a">
-                                Champiñones
-                            </label>
-                            <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
-                            <label for="checkbox-2a">
-                                Aceitunas negras
-                            </label>
-                            <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
-                            <label for="checkbox-3a">
-                                Pimientos
-                            </label>
-                            <input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
-                            <label for="checkbox-4a">
-                                Cebolla
-                            </label>
-                        </fieldset>
-                    </div>
-                    <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup" data-type="horizontal">
-                            <legend>
-                                Ingredientes para no vegetarianos:
-                            </legend>
-                            <input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
-                            <label for="checkbox-6">
-                                Chorizo
-                            </label>
-                            <input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
-                            <label for="checkbox-7">
-                                Jamón Serrano
-                            </label>
-                            <input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom"  />
-                            <label for="checkbox-8">
-                                Carne picada
-                            </label>
-                        </fieldset>
-                    </div>
-                    <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup" data-type="horizontal">
-                            <legend>
-                                Forma de pago:
-                            </legend>
-                            <input type="radio" name="radio-choice-b" id="radio-choice-c" value="on" checked="checked" />
-                            <label for="radio-choice-c">
-                                Metálico
-                            </label>
-                            <input type="radio" name="radio-choice-b" id="radio-choice-d" value="off" />
-                            <label for="radio-choice-d">
-                                Cupón
-                            </label>
-                            <input type="radio" name="radio-choice-b" id="radio-choice-e" value="other"/>
-                            <label for="radio-choice-e">
-                                Tarjeta crédito
-                            </label>
-                        </fieldset>
-                    </div>
-                </form>
-            </div>
-            <div data-role="footer" >
-                <p>Pizzeria CPIFP Los Enlaces </p>
-            </div>
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>practica jquery mobile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/jquery-mobile/css/themes/default/jquery.mobile.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+
+
+    <div id="main" class="ui-page ui-body-c ui-page-active" data-role="page" data-url="main" tabindex="0">
+        <!-- Cabecera -->
+
+        <header data-role="header">
+            <h1>Login</h1>
+        </header>
+        <!-- /navbar -->
+        <!-- Body -->
+        <div class="wrap" data-role="content">
+            <section id="login" class="box">
+
+                <div class="boxBody">
+                    <form id="loginForm" action="#cursos" method="POST">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="usuario" />
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="password" />
+
+                        <a data-role="button" href="#cursos">Entrar</a>
+                    </form>
+                </div>
+                <footer id="footerLogin" class="sectionFooter">
+                    <a href="#" title="Tengo problemas para acceder">¿Problemas para acceder?</a>
+                    <a href="#" title="He olvidado mi contraseña o usuario">¿Olvido su usuario/contraseña?</a>
+                </footer>
+            </section>
         </div>
-    </body>
+
+        <!-- Pie página -->
+        <footer data-role="footer">
+            <h4><a href="#" class="ui-btn ui-icon-info ui-btn-icon-top">Ayuda</a></h4>
+        </footer>
+    </div>
+    <!--main-->
+
+    <div data-role="page" id="cursos" class="ui-page ui-body-c" data-add-back-btn="”true”" data-url="cursos" tabindex="0">
+        <!-- Cabecera -->
+        <header data-role="header">
+            <h1>Alumnos</h1>
+        </header>
+        <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li><a href="#main" data-icon="power" title="Salir de la aplicación">Salir</a>
+                </li>
+                <li><a href="#cursos" data-icon="user" class="ui-btn-active ui-state-persist" title="Seleccionar alumno">Alumnos</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Body -->
+        <div class="wrap" data-role="content">
+            <section id="cursos" class="box">
+
+                <div class="boxBody">
+                    <form id="cursoForm" action="#evaluacion" method="POST">
+                        <select name="curso" id="cursoSel">
+                            <option>Seleccione curso</option>
+                            <option>DAW 1º</option>
+                            <option>DAW 2º</option>
+                            <option>DAM 1º</option>
+                            <option>DAM 2º</option>
+                        </select>
+
+                        <select name="alumno" id="alumnoSel">
+                            <option>Seleccione alumno</option>
+                            <option>Fernando López</option>
+                            <option>Martin Luter</option>
+                            <option>Ana Simón</option>
+                            <option>Pedrito Palos</option>
+                        </select>
+                        <a data-role="button" href="#evaluar">Evaluar</a>
+                    </form>
+                </div>
+                <footer id="footerCursos" class="sectionFooter">
+                </footer>
+            </section>
+        </div>
+        <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li><a href="#main" data-icon="power" title="Salir de la aplicación">Salir</a>
+                </li>
+                <li><a href="#cursos" data-icon="user" class="ui-btn-active ui-state-persist" title="Seleccionar alumno">Alumnos</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Pie página -->
+        <footer data-role="footer">
+            <h4><a href="#" class="ui-btn ui-icon-info ui-btn-icon-top">Ayuda</a></h4>
+        </footer>
+    </div>
+    <!--cursos-->
+
+    <div data-role="page" id="evaluar" class="ui-page ui-body-c" data-add-back-btn="”true”" data-url="evaluar" tabindex="0">
+        <!-- Cabecera -->
+        <header data-role="header">
+            <h1>Criterios</h1>
+        </header>
+        <div data-role="navbar" data-iconpos="left">
+
+            <ul>
+                <li><a href="#main" data-icon="power" title="Salir de la aplicación">Salir</a>
+                </li>
+                <li><a href="#cursos" data-icon="user" title="Seleccionar alumno">Alumnos</a>
+                </li>
+                <li><a href="#evaluar" data-icon="eye" title="Listado de criterios de evaluacion" class="ui-btn-active ui-state-persist">Criterios</a>
+                </li>
+                <li><a href="#notas" data-icon="edit" title="Establecer nota del proyecto">Nota</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Body -->
+        <div class="wrap" data-role="content">
+            <section id="evalua" class="box">
+
+                <div class="boxBody">
+                    <div class="ui-field-contain">
+                        <fieldset data-role="controlgroup">
+                            <legend>Entrada del alumno:</legend>
+                            
+                            <input type="radio" name="radio-choice-2" id="radio-choice-1" value="choice-1">
+                            <label for="radio-choice-1">Mal</label>
+                            <input type="radio" name="radio-choice-2" id="radio-choice-2" value="choice-2" checked="checked">
+                            <label for="radio-choice-2" data-icon="arrow-d-l">Regular</label>
+                            <input type="radio" name="radio-choice-2" id="radio-choice-3" value="choice-3">
+                            <label for="radio-choice-3" data-icon="arrow-u-r">Bien</label>
+                           
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup">
+                            <legend>Indumentaria:</legend>
+                            
+                            <input type="radio" name="radio-choice-20" id="radio-choice-10" value="choice-1">
+                            <label for="radio-choice-10">Mal</label>
+                            <input type="radio" name="radio-choice-20" id="radio-choice-20" value="choice-2" checked="checked">
+                            <label for="radio-choice-20" data-icon="arrow-d-l">Regular</label>
+                            <input type="radio" name="radio-choice-20" id="radio-choice-30" value="choice-3">
+                            <label for="radio-choice-30" data-icon="arrow-u-r">Bien</label>
+                            
+                        </fieldset>
+                        
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Introducción:</legend>
+                            
+                           <div class="ui-checkbox">
+                              <label for="IntroAtractiva" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">¿Es atractiva?</label>
+                              <input type="checkbox" id="IntroAtractiva" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="introClara" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">¿Queda claro el proyecto?</label>
+                              <input type="checkbox" id="IntroClara" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                                                          
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Desarrollo:</legend>
+                            
+                           <div class="ui-checkbox">
+                              <label for="desarrolloClaro" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Claridad en la exposición</label>
+                              <input type="checkbox" id="desarrolloClaro" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="desarrolloOrden" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Orden en las ideas</label>
+                              <input type="checkbox" id="desarrolloOrden" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                                 <div class="ui-checkbox">
+                              <label for="desarrolloTecnico" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Aclaración de terminos técnicos</label>
+                              <input type="checkbox" id="desarrolloTecnico" data-corners="false" data-enhanced="true"></input>
+                            </div>                         
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Conclusión:</legend>
+                            
+                           <div class="ui-checkbox">
+                              <label for="ConclusionObjetivos" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">¿Queda claro el objetivo del proyecto?</label>
+                              <input type="checkbox" id="ConclusionObjetivos" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="ConclusionVende" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">¿Lo vende bien?</label>
+                              <input type="checkbox" id="ConclusionVende" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                                                          
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup">
+                            <legend>Seguridad en lo que expone:</legend>
+                            
+                            <input type="radio" name="radio-choice-200" id="radio-choice-100" value="choice-1">
+                            <label for="radio-choice-100">Mal</label>
+                            <input type="radio" name="radio-choice-200" id="radio-choice-200" value="choice-2" checked="checked">
+                            <label for="radio-choice-200" data-icon="arrow-d-l">Regular</label>
+                            <input type="radio" name="radio-choice-200" id="radio-choice-300" value="choice-3">
+                            <label for="radio-choice-300" data-icon="arrow-u-r">Bien</label>
+                           
+                        </fieldset>
+
+                         <fieldset data-role="controlgroup">
+                            <legend>Presentación trabajada (PowerPoint):</legend>
+                            
+                            <input type="radio" name="radio-choice-2000" id="radio-choice-1000" value="choice-1">
+                            <label for="radio-choice-1000">Mal</label>
+                            <input type="radio" name="radio-choice-2000" id="radio-choice-2000" value="choice-2" checked="checked">
+                            <label for="radio-choice-2000" data-icon="arrow-d-l">Regular</label>
+                            <input type="radio" name="radio-choice-2000" id="radio-choice-3000" value="choice-3">
+                            <label for="radio-choice-3000" data-icon="arrow-u-r">Bien</label>
+                           
+                        </fieldset>
+
+                         <fieldset data-role="controlgroup">
+                            <legend>Entusiasmo en lo que expone:</legend>
+                            
+                            <input type="radio" name="radio-choice-20000" id="radio-choice-10000" value="choice-1">
+                            <label for="radio-choice-10000">Mal</label>
+                            <input type="radio" name="radio-choice-20000" id="radio-choice-20000" value="choice-2" checked="checked">
+                            <label for="radio-choice-20000" data-icon="arrow-d-l">Regular</label>
+                            <input type="radio" name="radio-choice-20000" id="radio-choice-30000" value="choice-3">
+                            <label for="radio-choice-30000" data-icon="arrow-u-r">Bien</label>
+                           
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Expresión oral:</legend>
+                            
+                           <div class="ui-checkbox">
+                              <label for="Expresion1" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Entonación correcta</label>
+                              <input type="checkbox" id="Expresion1" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="Expresion2" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Volumen adecuado</label>
+                              <input type="checkbox" id="Expresion2" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="Expresion3" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Velocidad adecuada</label>
+                              <input type="checkbox" id="Expresion3" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="Expresion4" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Ausencia de vacilación en la voz</label>
+                              <input type="checkbox" id="Expresion4" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="Expresion5" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Pausas correctas</label>
+                              <input type="checkbox" id="Expresion5" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="Expresion6" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Ausencia de muletillas</label>
+                              <input type="checkbox" id="Expresion6" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                                                          
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup">
+                            <legend>Duración:</legend>
+                            
+                            <input type="radio" name="radio-choice-200000" id="radio-choice-100000" value="choice-1">
+                            <label for="radio-choice-100000">Corta</label>
+                            <input type="radio" name="radio-choice-200000" id="radio-choice-200000" value="choice-2" checked="checked">
+                            <label for="radio-choice-200000" data-icon="arrow-d-l">Adecuada</label>
+                            <input type="radio" name="radio-choice-200000" id="radio-choice-300000" value="choice-3">
+                            <label for="radio-choice-300000" data-icon="arrow-u-r">Larga</label>
+                           
+                        </fieldset>
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Lenguaje no verbal:</legend>
+                            
+                           <div class="ui-checkbox">
+                              <label for="lnv1" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Dirige la mirada a toda la sala</label>
+                              <input type="checkbox" id="lnv1" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="lnv2" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Expresión facial positiva</label>
+                              <input type="checkbox" id="lnv2" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="lnv3" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Posición correcta del cuerpo</label>
+                              <input type="checkbox" id="lnv3" data-corners="false" data-enhanced="true"></input>
+                            </div>
+                            <div class="ui-checkbox">
+                              <label for="lnv4" class="ui-btn ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Ausencia de tics/gestos nerviosos</label>
+                              <input type="checkbox" id="lnv4" data-corners="false" data-enhanced="true"></input>
+                            </div>                                          
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup">
+                            <legend>Capacidad de atraer la atención del público:</legend>
+                            
+                            <input type="radio" name="radio-choice-2000000" id="radio-choice-1000000" value="choice-1">
+                            <label for="radio-choice-1000000">Mala</label>
+                            <input type="radio" name="radio-choice-2000000" id="radio-choice-2000000" value="choice-2" checked="checked">
+                            <label for="radio-choice-2000000" data-icon="arrow-d-l">Regular</label>
+                            <input type="radio" name="radio-choice-2000000" id="radio-choice-3000000" value="choice-3">
+                            <label for="radio-choice-3000000" data-icon="arrow-u-r">Buena</label>
+                           
+                        </fieldset>
+
+                         <fieldset data-role="controlgroup">
+                            <legend>¿Responde preguntas de forma coherente?</legend>
+                            
+                            <input type="radio" name="radio-choice-20000000" id="radio-choice-10000000" value="choice-1">
+                            <label for="radio-choice-10000000">No</label>
+                            <input type="radio" name="radio-choice-20000000" id="radio-choice-20000000" value="choice-2" checked="checked">
+                            <label for="radio-choice-20000000" data-icon="arrow-d-l">A veces</label>
+                            <input type="radio" name="radio-choice-20000000" id="radio-choice-30000000" value="choice-3">
+                            <label for="radio-choice-30000000" data-icon="arrow-u-r">Si</label>
+                           
+                        </fieldset>   
+
+                         <a data-role="button" href="#notas">Poner nota</a>                     
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li><a href="#main" data-icon="power" title="Salir de la aplicación">Salir</a>
+                </li>
+                <li><a href="#cursos" data-icon="user" title="Seleccionar alumno">Alumnos</a>
+                </li>
+                <li><a href="#evaluar" data-icon="eye" title="Listado de criterios de evaluacion" class="ui-btn-active ui-state-persist">Criterios</a>
+                </li>
+                <li><a href="#notas" data-icon="edit" title="Establecer nota del proyecto">Nota</a>
+                </li>
+            </ul>
+        </div>
+        <footer data-role="footer">
+            <h4><a href="#" class="ui-btn ui-icon-info ui-btn-icon-top">Ayuda</a></h4>
+        </footer>
+    </div>
+    </div>
+
+    <!--cursos-->
+
+
+    <div data-role="page" id="notas" class="ui-page ui-body-c" data-add-back-btn="”true”" data-url="notas" tabindex="0">
+        <!-- Cabecera -->
+        <header data-role="header">
+            <h1>Notas</h1>
+        </header>
+        <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li><a href="#main" data-icon="power" title="Salir de la aplicación">Salir</a>
+                </li>
+                <li><a href="#cursos" data-icon="user" title="Seleccionar alumno">Alumnos</a>
+                </li>
+                <li><a href="#evaluar" data-icon="eye" title="Listado de criterios de evaluacion">Criterios</a>
+                </li>
+                <li><a href="#notas" data-icon="edit" title="Establecer nota del proyecto" class="ui-btn-active ui-state-persist">Nota</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Body -->
+        <div class="wrap" data-role="content">
+            <section id="cursos" class="box">
+
+                <div class="boxBody">
+                    <form id="notasForm" action="#" method="POST">
+                        <label for="proyecto">Calidad Poroyecto (Max: 6.5)</label>
+                        <input type="number" name="proyecto" id="proyecto" step="any" min="0" max="6.5" />
+                        <label for="presentacion">Calidad Presentación (Max: 1)</label>
+                        <input type="number" name="presentacion" id="presentacion" step="any" min="0" max="1" />
+                        <label for="oral">Expresión Oral (Max: 2.5)</label>
+                        <input type="number" name="oral" id="oral" step="any" min="0" max="2.5" />
+                        <a data-role="button" href="#">Poner nota</a>
+                    </form>
+                </div>
+
+            </section>
+        </div>
+        <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li><a href="#main" data-icon="power" title="Salir de la aplicación">Salir</a>
+                </li>
+                <li><a href="#cursos" data-icon="user" title="Seleccionar alumno">Alumnos</a>
+                </li>
+                <li><a href="#evaluar" data-icon="eye" title="Listado de criterios de evaluacion">Criterios</a>
+                </li>
+                <li><a href="#notas" data-icon="edit" title="Establecer nota del proyecto" class="ui-btn-active ui-state-persist">Nota</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Pie página -->
+        <footer data-role="footer">
+            <h4><a href="#" class="ui-btn ui-icon-info ui-btn-icon-top">Ayuda</a></h4>
+        </footer>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-mobile/js/jquery.mobile.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
 </html>
